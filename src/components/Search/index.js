@@ -16,6 +16,10 @@ export default () =>{
       setDate(dateString);
     }
 
+    //test
+
+
+
         //flight change function
         function onFlightNoChange(value) {
           setFlightNumber(value);
@@ -26,9 +30,6 @@ export default () =>{
         setCarrier(value);
       }         
 const onSearch= () =>{
-
-
-
 
   let formattedDate = date.replace("-", "/");
   formattedDate = formattedDate.replace("-", "/");
@@ -52,13 +53,13 @@ const onSearch= () =>{
 
 
     return (
-     
+     <div>
         <div class='main' style={{ paddingTop: 20 }} >
          <div class='a'><p><strong> Welcome To Ramtoo Airways</strong></p></div> 
-            <div>
-            <Select
+            <div style={{padding:10}}>
+            <Select 
     showSearch
-    style={{ width: 500 }}
+    style={{ width: 500}}
     placeholder="Select a Carrier"
     optionFilterProp="children"
     onChange={onCarrierChange}
@@ -67,7 +68,8 @@ const onSearch= () =>{
     }
   > 
     <Option value="EK">
-    <div style={{ marginRight: 15 }}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ marginRight: 15 }}>
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png"
                       height="20px"
@@ -75,10 +77,11 @@ const onSearch= () =>{
                     />
                   </div>
                   <div style={{ fontSize: 18 }}>Emirates</div>
-    </Option>
-
-    <Option value="ET">
-    <div style={{ marginRight: 15 }}>
+                </div>
+              </Option>
+              <Option value="EY">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ marginRight: 15 }}>
                     <img
                       src="https://discover.film/wp-content/uploads/2018/03/etihad-airlines-short-films.jpg"
                       height="20px"
@@ -86,9 +89,11 @@ const onSearch= () =>{
                     />
                   </div>
                   <div style={{ fontSize: 18 }}>Eithid</div>
-    </Option>
-    <Option value="QR">
-    <div style={{ marginRight: 15 }}>
+                </div>
+              </Option>
+              <Option value="QR">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ marginRight: 15 }}>
                     <img
                       src="https://prague.tv/images/customer/logo/Qatar-Airways-Logo_gallery-big.png"
                       height="20px"
@@ -96,15 +101,15 @@ const onSearch= () =>{
                     />
                   </div>
                   <div style={{ fontSize: 18 }}>Qatar</div>
-    
-    
-    </Option>
+                </div>
+              </Option>
   </Select>
             </div>
-            <div><InputNumber onChange={onFlightNoChange} placeholder='ex 245, 311..'  style={{ width: 500 }}/></div>
-            <div> <DatePicker onChange={onChangeDate}/> </div>
+            <div><InputNumber onChange={onFlightNoChange} placeholder='ex 245, 311..'  
+            style={{ width: 500 , padding : 10}}/></div>
+            <div> <DatePicker onChange={onChangeDate} /> </div>
             <Button
-             style={{  }}
+             style={{ paddingTop:10 }}
           type="primary"
           icon="search"
           onClick={onSearch}
@@ -112,14 +117,31 @@ const onSearch= () =>{
         >
           Search
         </Button>
-        {data.flighStatuses && (
+        </div>
+        <div>
+        {data.flightStatuses && (
           <div class="status">
           <h1>Search complete!</h1>
-          <h4>{data.flighStatuses[0].status}</h4>
+          <h4>{data.flightStatuses[0].status}</h4>
+          <h4>{data.appendix.airlines[0].name}</h4>
+          <h4>{data.appendix.airlines[0].fs}</h4>
           </div>
+          
         )}
         </div>
+        {/* <div>
+        {data.appendix  && (
+          <div class="status">
+          <h1>Search complete!</h1>
+          <h4>{data.appendix.airlines[0]}</h4>
+          </div>
+          
+        )}
+        </div> */}
 
+
+        </div>
+        
         
     )
 };

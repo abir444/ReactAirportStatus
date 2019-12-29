@@ -1,33 +1,57 @@
+body, html {
+  height: 100%;
+  background-image: url("a.jpg");
+  background-repeat: no-repeat; background-size: 100% 100%;
+  
+}
+
 body {
-background-color: #E6E6FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
 .main{
-  position: fixed;
+  position: relative;
   text-align: center;
   display: inline-block;
-  background-image: url("a.jpg");
-    width: 900px;
-    height: 400px;
-    border: 5px solid lightgrey;
+  /* background-image: url("a.jpg"); */
+    width: 600px;
+    background-color: rgb(122, 21, 21);
+    height: 790px;
+    border: 5px rgb(83, 240, 240);
     padding: 50px;
     margin: 20px;
+    border-radius: 10%;
   
 }
 .status{
-  background-color: #E6E6FA;
-  width: 300px;
-  height: 100px;
-
+  box-sizing: border-box;
+  position: absolute;
+  /* text-align: center; */
+  display: inline-block;
+  top: 30%;
+  left:594px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: aliceblue;
+  width: 500px;
+  height: 170px;
+  border-radius: 20%;
+  /* border: 5px solid rgb(16, 134, 155); */
+  
 }
-.a {
-  width: 400px;
+.main.a {
+  width: 700px;
   height: 100px;
   font: 100;
+  color: aliceblue;
   padding: 7px;  
   position: relative;
   -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
