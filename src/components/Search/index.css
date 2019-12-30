@@ -36,14 +36,14 @@ code {
   position: absolute;
   /* text-align: center; */
   display: inline-block;
-  top: 30%;
+  top: 35%;
   left:594px;
   padding: 10px;
   background-color: rgb(255, 255, 255);
-  color: aliceblue;
+  color: rgb(13, 42, 63);
   width: 500px;
-  height: 170px;
-  border-radius: 20%;
+  height: 300px;
+  border-radius: 15%;
   /* border: 5px solid rgb(16, 134, 155); */
   
 }

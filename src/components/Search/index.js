@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import { DatePicker,InputNumber, Select, Button } from 'antd';
 import './index.css';
+import Results from '../Results';
 
 export default () =>{
       // defining select option and set
@@ -119,25 +120,24 @@ const onSearch= () =>{
         </Button>
         </div>
         <div>
-        {data.flightStatuses && (
+        {data.flightStatuses && data.flightStatuses.length > 0 && (
           <div class="status">
           <h1>Search complete!</h1>
-          <h4>{data.flightStatuses[0].status}</h4>
-          <h4>{data.appendix.airlines[0].name}</h4>
-          <h4>{data.appendix.airlines[0].fs}</h4>
+          <Results status= {data.flightStatuses[0].status}
+                   airportData={
+                            data.appendix && data.appendix.airports
+                              ? data.appendix.airports
+                              : ""
+                          }
+          
+          />
           </div>
           
         )}
         </div>
-        {/* <div>
-        {data.appendix  && (
-          <div class="status">
-          <h1>Search complete!</h1>
-          <h4>{data.appendix.airlines[0]}</h4>
-          </div>
-          
-        )}
-        </div> */}
+          {
+            data.flightStatuses && data.flightStatuses.length ===0 && <h1> Zero Info Returned ! Try again later</h1>
+          }
 
 
         </div>
